@@ -4345,7 +4345,7 @@
           t = document.querySelectorAll(
             ".review-slider__dots .swiper-pagination-bullet"
           );
-        for (let s = 0; s < e.length; s++) {
+        for (let s = 0; s < e.length - 2; s++) {
           const i = e[s].querySelector("img").getAttribute("src");
           t[s].style.backgroundImage = "url('" + i + "')";
         }
@@ -4628,8 +4628,9 @@
     });
   const we = document.querySelector(".scroll-up");
   if (we) {
-    const e = 100,
-      t = document.querySelector(".scroll-up__svg-path"),
+    const e = 100;
+    we.classList.remove("scroll-up_active");
+    const t = document.querySelector(".scroll-up__svg-path"),
       s = t.getTotalLength();
     (t.style.strokeDasharray = `${s} ${s}`),
       (t.style.transition = "stroke-dashoffset 30ms");
